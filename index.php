@@ -6,7 +6,7 @@
   <![endif]-->
 
   <header class="main-header">
-      Komuhn logoLALA
+      <img class="logo" src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Komuhn"/>
   </header>
 
   <main>
