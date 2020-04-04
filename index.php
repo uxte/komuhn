@@ -6,7 +6,7 @@
   <![endif]-->
 
   <header class="main-header">
-      Komuhn logo
+      Komuhn logoLALA
   </header>
 
   <main>
