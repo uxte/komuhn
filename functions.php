@@ -86,8 +86,10 @@ function my_body_classes( $classes ) {
     return $classes;
 }
 
+//Enable thumbnails - featured image
 add_theme_support( 'post-thumbnails' );
 
+//CPT Projects
 function projects_post_type() {
     register_post_type( 'projects',
         array(
