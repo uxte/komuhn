@@ -12,7 +12,7 @@
   <main>
 
       <section class="portfolio">
-
+          
           <article>
               This is a portfolio block
           </article>
