@@ -14,6 +14,9 @@
       <section class="portfolio">
           Branch test
           <article>
+              <header>
+                  Article header
+              </header>
               This is a portfolio block
           </article>
 
