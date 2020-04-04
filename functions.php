@@ -86,4 +86,21 @@ function my_body_classes( $classes ) {
     return $classes;
 }
 
+add_theme_support( 'post-thumbnails' );
+
+function projects_post_type() {
+    register_post_type( 'projects',
+        array(
+            'labels' => array(
+                'name' => __( 'Projects' ),
+                'singular_name' => __( 'Project' )
+            ),
+            'public' => true,
+            'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
+            'menu_position' => 5,
+            'menu_icon' => 'dashicons-image-filter'
+        )
+    );
+}
+add_action( 'init', 'projects_post_type' );
 ?>
