@@ -416,6 +416,9 @@ body {
 .item-project {
   position: relative;
 }
+.item-project.display-half {
+  height: 50vh;
+}
 .item-project .item-image {
   position: absolute;
   width: 100%;
