@@ -389,10 +389,51 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 .main-header {
-  padding: 35px 25px;
+  padding: 2rem 1.5rem;
   background-color: white;
 }
 .main-header .logo {
   max-width: 220px;
+}
+.portfolio .item-project {
+  height: 100vh;
+}
+.portfolio .item-project:first-child {
+  height: calc(100vh - 103px);
+}
+.portfolio .item-project:nth-child(even) .item-content {
+  text-align: right;
+}
+.btn-white {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 0.8rem 3rem;
+  border: 2px solid white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.item-project {
+  position: relative;
+}
+.item-project .item-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+.item-project .item-content {
+  position: relative;
+  padding: 1.5rem;
+}
+.item-project .item-content .item-title {
+  color: white;
+  font-size: 2rem;
+}
+.item-project .item-content .btn-white {
+  display: inline-block;
+  margin-top: 2rem;
 }
 /*# sourceMappingURL=main.css.map */
