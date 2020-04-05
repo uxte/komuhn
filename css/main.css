@@ -401,6 +401,9 @@ body {
 .portfolio .item-project:first-child {
   height: calc(100vh - 103px);
 }
+.portfolio .item-project:nth-child(even).display-half {
+  justify-content: flex-end;
+}
 .portfolio .item-project:nth-child(even) .item-content {
   text-align: right;
 }
@@ -418,6 +421,8 @@ body {
 }
 .item-project.display-half {
   height: 50vh;
+  display: flex;
+  align-items: center;
 }
 .item-project .item-image {
   position: absolute;

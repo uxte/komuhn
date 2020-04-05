@@ -123,6 +123,9 @@ body {
       height: calc(100vh - 103px);
     }
     &:nth-child(even){
+      &.display-half {
+        justify-content: flex-end;
+      }
       .item-content {
         text-align: right;
       }
@@ -146,6 +149,8 @@ body {
   position: relative;
   &.display-half {
     height: 50vh;
+    display: flex;
+    align-items: center;
   }
   .item-image {
     position: absolute;
