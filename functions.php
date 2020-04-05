@@ -89,13 +89,14 @@ function my_body_classes( $classes ) {
 //Enable thumbnails - featured image
 add_theme_support( 'post-thumbnails' );
 
-//CPT Projects
-function projects_post_type() {
-    register_post_type( 'projects',
+//CPTPportfolio
+function portfolio_post_type() {
+    register_post_type( 'portfolio',
         array(
             'labels' => array(
-                'name' => __( 'Projects' ),
-                'singular_name' => __( 'Project' )
+                'name' => __( 'Portfolio' ),
+                'singular_name' => __( 'Project' ),
+                'add_new_item' => __( 'Add New Project' )
             ),
             'public' => true,
             'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
@@ -104,5 +105,5 @@ function projects_post_type() {
         )
     );
 }
-add_action( 'init', 'projects_post_type' );
+add_action( 'init', 'portfolio_post_type' );
 ?>
