@@ -11,13 +11,32 @@
 
   <main>
 
-      <section class="portfolio">
-          
-          <article>
-              This is a portfolio block
-          </article>
+    <?php
+        $args = array (
+            'post_type'              => 'portfolio',
+        );
+        $queryPortfolio = new WP_Query( $args );
 
+        if ( $queryPortfolio->have_posts() ):
+    ?>
+      <section class="portfolio">
+            <?php
+                while ( $queryPortfolio->have_posts() ) : $queryPortfolio->the_post();
+            ?>
+                <article class="item-project">
+                    <img class="item-image" src="<?php echo get_template_directory_uri(); ?>/img/inecc.svg" alt="Inecc"/>
+                    <div class="item-content">
+                        <h2 class="item-title"><?php echo the_title(); ?></h2>
+                        <a href="#" class="btn-white">Learn more</a>
+                    </div>
+                </article>
+            <?php
+                endwhile;
+            ?>
       </section>
+    <?php
+        endif;
+    ?>
 
   </main>
 
