@@ -137,7 +137,7 @@ function display_meta(){
     $custom = get_post_custom($post->ID);
     $display_meta = $custom["display_meta"][0];
     ?>
-        <label><input type="checkbox" value="1" <?php checked($value, true, true); ?> name="display_meta" /> 1/2 screen</label>
+        <label><input type="checkbox" name="display_meta" <?php if( $display_meta == true ) { ?>checked="checked"<?php } ?> /> 1/2 screen</label>
     <?php
 }
 

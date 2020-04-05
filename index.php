@@ -28,8 +28,10 @@
                     }
                     $subtitle = get_post_meta(get_the_ID(),'subtitle_meta', 1);
                     $display = get_post_meta(get_the_ID(),'display_meta', 1);
-                    if($display == 1) {
+                    if($display == true) {
                         $itemClass = 'display-half';
+                    } else {
+                        $itemClass = '';
                     }
             ?>
                 <article class="item-project <?php echo $itemClass; ?>">
