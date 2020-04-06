@@ -7,7 +7,7 @@
 
 	<header class="main-header">
 		<a class="logo" href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="<?php bloginfo('name'); ?>" />
+			<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="<?php bloginfo('name'); ?>" />
 		</a>
 	</header>
 
