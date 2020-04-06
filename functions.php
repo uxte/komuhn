@@ -120,16 +120,17 @@ function portfolio_post_type() {
 add_action("admin_init", "admin_init");
 
 function admin_init(){
-    add_meta_box("subtitle-meta", "Subtitle", "subtitle_meta", "portfolio", "normal", "high");
+    add_meta_box("client_meta", "Client/Project", "client_meta", "portfolio", "side", "high");
     add_meta_box("display_meta", "Display", "display_meta", "portfolio", "side", "high");
+    add_meta_box("color_meta", "Color (hex)", "color_meta", "portfolio", "side", "low");
 }
 
-function subtitle_meta(){
+function client_meta(){
     global $post;
     $custom = get_post_custom($post->ID);
-    $subtitle_meta = $custom["subtitle_meta"][0];
+    $client_meta = $custom["client_meta"][0];
     ?>
-        <input name="subtitle_meta" value="<?php echo $subtitle_meta; ?>" style="width:100%;" />
+        <input name="client_meta" value="<?php echo $client_meta; ?>" style="width:100%;" />
     <?php
 }
 function display_meta(){
@@ -140,12 +141,21 @@ function display_meta(){
         <label><input type="checkbox" name="display_meta" <?php if( $display_meta == true ) { ?>checked="checked"<?php } ?> /> 1/2 screen</label>
     <?php
 }
+function color_meta(){
+    global $post;
+    $custom = get_post_custom($post->ID);
+    $color_meta = $custom["color_meta"][0];
+    ?>
+        <input name="color_meta" value="<?php echo $color_meta; ?>" />
+    <?php
+}
 
 add_action('save_post', 'save_details');
     function save_details(){
         global $post;
     
-        update_post_meta($post->ID, "subtitle_meta", $_POST["subtitle_meta"]);
+        update_post_meta($post->ID, "client_meta", $_POST["client_meta"]);
         update_post_meta($post->ID, "display_meta", $_POST["display_meta"]);
+        update_post_meta($post->ID, "color_meta", $_POST["color_meta"]);
     }
 ?>
