@@ -56,7 +56,7 @@
 		<section class="about">
 			<span>50% for the world</span>
 			<h1>We believe good design comes from a deep understanding of how the world works.</h1>
-			<p>And that’s why for each hour we spend on client proposed projects we invest another hour in self proposed community based projects.<br>We measure the importance of these projects not just by how much we learn from them but also how they impact the world in a positive way.</p>
+			<p>And that’s why for each hour we spend on client proposed projects we invest another hour in self proposed community based projects.<br><br>We measure the importance of these projects not just by how much we learn from them but also how they impact the world in a positive way.</p>
 		</section>
 		<?php
 			$args = array (
