@@ -106,6 +106,13 @@ body {
 	 font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
+h1 {
+	font-size: 2rem;
+	@media screen and (min-width: 768px){
+		font-size: 3rem;
+	}
+}
+
 //HEADER
 .main-header {
 	padding: 2rem 1.5rem;
@@ -160,6 +167,17 @@ body {
 		}
 	}
 }
+.about {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	align-content: center;
+	height: 100vh;
+	padding: 1.5rem;
+	span {
+		font-weight: 200;
+	}
+}
 
 //BUTTONS
 .btn-white {
@@ -188,10 +206,8 @@ body {
 		padding: 1.5rem;
 		.item-title {
 			color: white;
-			font-size: 2rem;
 			@media screen and (min-width: 768px){
 				width: 50%;
-				font-size: 3rem;
 			}
 		}
 		.btn-white {

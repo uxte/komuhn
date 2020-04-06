@@ -388,6 +388,14 @@ textarea {
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
+h1 {
+  font-size: 2rem;
+}
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
 .main-header {
   padding: 2rem 1.5rem;
   background-color: white;
@@ -437,6 +445,17 @@ body {
     width: 80%;
   }
 }
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  height: 100vh;
+  padding: 1.5rem;
+}
+.about span {
+  font-weight: 200;
+}
 .btn-white {
   color: white;
   font-size: 1.1rem;
@@ -463,12 +482,10 @@ body {
 }
 .item-project .item-content .item-title {
   color: white;
-  font-size: 2rem;
 }
 @media screen and (min-width: 768px) {
   .item-project .item-content .item-title {
     width: 50%;
-    font-size: 3rem;
   }
 }
 .item-project .item-content .btn-white {
