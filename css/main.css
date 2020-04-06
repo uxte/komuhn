@@ -392,7 +392,7 @@ body {
   padding: 2rem 1.5rem;
   background-color: white;
 }
-.main-header .logo {
+.main-header .logo img {
   max-width: 220px;
 }
 @media screen and (min-width: 768px) {

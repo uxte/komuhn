@@ -306,7 +306,7 @@ template {
 /* ==========================================================================
 	 Author's custom styles
 	 ========================================================================== */
-.main-header .logo {
+.main-header .logo img {
   max-width: 280px;
 }
 .item-project .item-content .item-title {
