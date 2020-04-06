@@ -86,4 +86,66 @@ function my_body_classes( $classes ) {
     return $classes;
 }
 
+//Enable SVG upload
+function add_svg_to_upload_mimes( $upload_mimes ) {
+	$upload_mimes['svg'] = 'image/svg+xml';
+	$upload_mimes['svgz'] = 'image/svg+xml';
+	return $upload_mimes;
+}
+add_filter( 'upload_mimes', 'add_svg_to_upload_mimes', 10, 1 );
+
+//Enable thumbnails for CPT - featured image
+add_theme_support( 'post-thumbnails' );
+
+//CPT Portfolio
+add_action( 'init', 'portfolio_post_type' );
+function portfolio_post_type() {
+    register_post_type( 'portfolio',
+        array(
+            'labels' => array(
+                'name' => __( 'Portfolio' ),
+                'singular_name' => __( 'Project' ),
+                'add_new_item' => __( 'Add New Project' )
+            ),
+            'public' => true,
+            'show_in_rest' => true,
+            'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
+            'menu_position' => 5,
+            'menu_icon' => 'dashicons-image-filter'
+        )
+    );
+}
+
+//PORTFOLIO PROJECT META
+add_action("admin_init", "admin_init");
+
+function admin_init(){
+    add_meta_box("subtitle-meta", "Subtitle", "subtitle_meta", "portfolio", "normal", "high");
+    add_meta_box("display_meta", "Display", "display_meta", "portfolio", "side", "high");
+}
+
+function subtitle_meta(){
+    global $post;
+    $custom = get_post_custom($post->ID);
+    $subtitle_meta = $custom["subtitle_meta"][0];
+    ?>
+        <input name="subtitle_meta" value="<?php echo $subtitle_meta; ?>" style="width:100%;" />
+    <?php
+}
+function display_meta(){
+    global $post;
+    $custom = get_post_custom($post->ID);
+    $display_meta = $custom["display_meta"][0];
+    ?>
+        <label><input type="checkbox" name="display_meta" <?php if( $display_meta == true ) { ?>checked="checked"<?php } ?> /> 1/2 screen</label>
+    <?php
+}
+
+add_action('save_post', 'save_details');
+    function save_details(){
+        global $post;
+    
+        update_post_meta($post->ID, "subtitle_meta", $_POST["subtitle_meta"]);
+        update_post_meta($post->ID, "display_meta", $_POST["display_meta"]);
+    }
 ?>

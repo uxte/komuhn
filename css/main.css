@@ -311,8 +311,8 @@ template {
  * Kroc Camen, and the H5BP dev community and team.
  */
 /* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
+	 Base styles: opinionated defaults
+	 ========================================================================== */
 html {
   color: #222;
   font-size: 1em;
@@ -374,8 +374,8 @@ textarea {
   resize: vertical;
 }
 /* ==========================================================================
-   Browser Upgrade Prompt
-   ========================================================================== */
+	 Browser Upgrade Prompt
+	 ========================================================================== */
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -383,9 +383,96 @@ textarea {
   padding: 0.2em 0;
 }
 /* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
+	 Author's custom styles
+	 ========================================================================== */
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+.main-header {
+  padding: 2rem 1.5rem;
+  background-color: white;
+}
+.main-header .logo {
+  max-width: 220px;
+}
+@media screen and (min-width: 768px) {
+  .portfolio {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+.portfolio .item-project {
+  height: 100vh;
+}
+@media screen and (min-width: 768px) {
+  .portfolio .item-project {
+    width: 100vw;
+  }
+}
+.portfolio .item-project:first-child {
+  height: calc(100vh - 103px);
+}
+.portfolio .item-project:nth-child(even).display-half {
+  justify-content: flex-end;
+}
+.portfolio .item-project:nth-child(even) .item-content {
+  text-align: right;
+}
+@media screen and (min-width: 768px) {
+  .portfolio .item-project:nth-child(even) .item-content .item-title {
+    margin-left: auto;
+  }
+}
+.portfolio .item-project.display-half {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .portfolio .item-project.display-half {
+    width: 50vw;
+    height: 100vh;
+  }
+  .portfolio .item-project.display-half .item-content .item-title {
+    width: 80%;
+  }
+}
+.btn-white {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 0.8rem 3rem;
+  border: 2px solid white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.item-project {
+  position: relative;
+}
+.item-project .item-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+.item-project .item-content {
+  position: relative;
+  padding: 1.5rem;
+}
+.item-project .item-content .item-title {
+  color: white;
+  font-size: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .item-project .item-content .item-title {
+    width: 50%;
+    font-size: 3rem;
+  }
+}
+.item-project .item-content .btn-white {
+  display: inline-block;
+  margin-top: 2rem;
 }
 /*# sourceMappingURL=main.css.map */
