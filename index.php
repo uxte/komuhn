@@ -10,13 +10,11 @@
   </header>
 
   <main>
-
-    <?php
+  <?php
         $args = array (
             'post_type'              => 'portfolio',
         );
         $queryPortfolio = new WP_Query( $args );
-
         if ( $queryPortfolio->have_posts() ):
     ?>
       <section class="portfolio">
