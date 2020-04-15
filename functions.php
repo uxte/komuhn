@@ -70,6 +70,29 @@ add_action( 'after_setup_theme', 'theme_slug_setup' );
 // }
 // add_action('wp_enqueue_scripts', 'my_load_scripts');
 
+// SHORTCODES
+
+function show_portfolio_post( $atts ) {
+
+	$title = $atts[title];
+	$post = get_page_by_title( $title, OBJECT, 'portfolio' );
+	$post_title = $post->post_title;
+	$post_link = get_permalink( $post );
+	$post_image = get_the_post_thumbnail( $post );
+
+	$return_string = 	'<article class="project">';
+	$return_string .= 		'<h1>' . $post_title . '</h1>';
+	$return_string .= 		'<a class="button" href="' . $post_link . '">Learn more</a>';
+	$return_string .= 		'<figure>' . $post_image . '</figure>';
+	$return_string .= 	'</article>';
+
+	wp_reset_query();
+	return $return_string;
+
+}
+add_shortcode('portfolio-post','show_portfolio_post');
+
+
 
 // Add classes to body
 add_filter( 'body_class','my_body_classes' );
@@ -153,7 +176,7 @@ function color_meta(){
 add_action('save_post', 'save_details');
     function save_details(){
         global $post;
-    
+
         update_post_meta($post->ID, "client_meta", $_POST["client_meta"]);
         update_post_meta($post->ID, "display_meta", $_POST["display_meta"]);
         update_post_meta($post->ID, "color_meta", $_POST["color_meta"]);
