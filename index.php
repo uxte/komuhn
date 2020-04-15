@@ -22,6 +22,7 @@
 			if ( $queryPortfolio->have_posts() ):
 		?>
 				<section class="portfolio">
+					
 					<?php
 						while ( $queryPortfolio->have_posts() ) : $queryPortfolio->the_post();
 							if ( has_post_thumbnail( get_the_ID() ) ){
@@ -58,6 +59,7 @@
 			<h1>We believe good design comes from a deep understanding of how the world works.</h1>
 			<p>And that’s why for each hour we spend on client proposed projects we invest another hour in self proposed community based projects.<br><br>We measure the importance of these projects not just by how much we learn from them but also how they impact the world in a positive way.</p>
 		</section>
+
 		<?php
 			$args = array (
 				'post_type' => 'portfolio',

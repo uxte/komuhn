@@ -1,0 +1,9 @@
+.ftpconfig
+.ftpconfig.cson
+.ftpignore
+id_rsa
+.DS_Store
+.git
+.gitignore
+config.codekit3
+*.less
