@@ -106,109 +106,114 @@ body {
 	 font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
+h1 {
+	font-size: 2rem;
+	@media screen and (min-width: 768px){
+		font-size: 3rem;
+	}
+}
+
+//HEADER
+.main-header {
+	padding: 2rem 1.5rem;
+	background-color: white;
+	.logo {
+		 img{
+			max-width: 220px;
+		}
+	}
+}
+
+//PORTFOLIO PAGE
+.portfolio {
+	@media screen and (min-width: 768px){
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.item-project {
+		height: 100vh;
+		@media screen and (min-width: 768px){
+			width: 100vw;
+		}
+		&:first-child {
+			height: calc(100vh - 103px);
+		}
+		&:nth-child(even){
+			&.display-half {
+				justify-content: flex-end;
+			}
+			.item-content {
+				text-align: right;
+				@media screen and (min-width: 768px){
+					.item-title {
+						margin-left: auto;
+					}
+				}
+			}
+		}
+		&.display-half {
+			height: 50vh;
+			display: flex;
+			align-items: center;
+			@media screen and (min-width: 768px){
+				width: 50vw;
+				height: 100vh;
+				.item-content {
+					.item-title {
+						width: 80%;
+					}
+				}
+			}
+		}
+	}
+}
+
+.about {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	align-content: center;
+	height: 100vh;
+	padding: 1.5rem;
+	span {
+		font-weight: 200;
+	}
+}
+
 //BUTTONS
-.button {
-    display: inline-block;
+.btn-white {
 	color: white;
+	font-size: 1.1rem;
 	font-weight: bold;
-	padding: 0 2.3em;
-    line-height: 2.7em;
+	padding: .8rem 3rem;
 	border: 2px solid white;
-	border-radius: .5rem;
+	border-radius: 5px;
 	text-decoration: none;
 }
 
-header.main-header {
-    padding: 0 @wspacing;
-    // background: rgba(256, 0, 0, 0.5);
-    height: 6rem;
-
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-
-    div.identity {
-        display: flex;
-        flex-flow: row wrap;
-        align-items: center;
-    }
-
-    h1.logo {
-        margin: 0;
-        margin-right: 0.5em;
-        a {
-            span {
-                display: none;
-            }
-            img {
-                display: block;
-                max-height: 2rem;
-            }
-        }
-    }
-    h2.title {
-        //What we make
-        span {}
-        margin: 0;
-    }
-}
-
-main {}
-
-// PAGE PORTFOLIO
-.page-portfolio {
-
-    main {
-
-        section.portfolio {
-
-            article.project {
-                background-color: #ccc;
-                position: relative;
-                height: 100vh;
-                width: 100vw;
-                overflow: hidden;
-
-                header {
-                    position: relative;
-                    z-index: 99;
-                    padding: @hspacing @wspacing;
-                    color: #fff;
-
-                    h1 {
-                        margin: 0;
-                    }
-                    a.button {
-                        margin-top: 1.5em;
-                    }
-                }
-
-                figure {
-                    margin: 0;
-                    position: absolute;
-                    left: 0; right: 0; bottom: 0;
-                    overflow: hidden;
-
-                    img {
-                        width: 100%;
-                        height: auto;
-                    }
-                }
-
-                &:first-of-type {
-                    // Remove the height of the .main-header in height of the first article
-                    height: calc(100vh - 6rem);
-                }
-                &:nth-of-type(even) {
-                    header {
-                        text-align: right;
-                    }
-                }
-            }
-
-        }
-
-
-    }
-
+//ITEMS
+.item-project {
+	position: relative;
+	.item-image {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+	}
+	.item-content {
+		position: relative;
+		padding: 1.5rem;
+		.item-title {
+			color: white;
+			@media screen and (min-width: 768px){
+				width: 50%;
+			}
+		}
+		.btn-white {
+			display: inline-block;
+			margin-top: 2rem;
+		}
+	}
 }

@@ -81,8 +81,10 @@ function show_portfolio_post( $atts ) {
 	$post_image = get_the_post_thumbnail( $post );
 
 	$return_string = 	'<article class="project">';
-	$return_string .= 		'<h1>' . $post_title . '</h1>';
-	$return_string .= 		'<a class="button" href="' . $post_link . '">Learn more</a>';
+	$return_string .=		'<header>';
+	$return_string .= 			'<h1>' . $post_title . '</h1>';
+	$return_string .= 			'<a class="button" href="' . $post_link . '">Learn more</a>';
+	$return_string .=		'</header>';
 	$return_string .= 		'<figure>' . $post_image . '</figure>';
 	$return_string .= 	'</article>';
 

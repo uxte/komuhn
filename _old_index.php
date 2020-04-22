@@ -1,5 +1,17 @@
 <?php get_header(); ?>
-		<main>
+
+<body <?php body_class(); ?>>
+	<!--[if IE]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+	<![endif]-->
+
+	<header class="main-header">
+		<a class="logo" href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>">
+			<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="<?php bloginfo('name'); ?>" />
+		</a>
+	</header>
+
+	<main>
 		<?php
 			$args = array (
 				'post_type' => 'portfolio',
@@ -10,7 +22,7 @@
 			if ( $queryPortfolio->have_posts() ):
 		?>
 				<section class="portfolio">
-
+					
 					<?php
 						while ( $queryPortfolio->have_posts() ) : $queryPortfolio->the_post();
 							if ( has_post_thumbnail( get_the_ID() ) ){
