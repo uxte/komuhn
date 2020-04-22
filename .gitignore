@@ -24,3 +24,5 @@ node_modules/
 
 *.codekit3
 config.codekit3
+.ftpconfig
+.ftpignore
