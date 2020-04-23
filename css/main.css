@@ -424,6 +424,9 @@ header.main-header h1.logo a img {
 header.main-header h2.title {
   margin: 0;
 }
+header.main-header h2.title span {
+  display: none;
+}
 .page-portfolio main section.portfolio article.project {
   background-color: #ccc;
   position: relative;
@@ -460,5 +463,9 @@ header.main-header h2.title {
 }
 .page-portfolio main section.portfolio article.project:nth-of-type(even) header {
   text-align: right;
+}
+.page-portfolio main section.portfolio article.project.half {
+  height: 50vh;
+  background-color: red;
 }
 /*# sourceMappingURL=main.css.map */

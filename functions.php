@@ -71,26 +71,40 @@ add_action( 'after_setup_theme', 'theme_slug_setup' );
 // add_action('wp_enqueue_scripts', 'my_load_scripts');
 
 // SHORTCODES
-
+// The portfolio post
 function show_portfolio_post( $atts ) {
 
-	$title = $atts[title];
-	$post = get_page_by_title( $title, OBJECT, 'portfolio' );
-	$post_title = $post->post_title;
-	$post_link = get_permalink( $post );
-	$post_image = get_the_post_thumbnail( $post );
+	$post = $atts[post];
+	$post = get_page_by_path( $post, OBJECT, 'portfolio' ); //slug
+	if ( $post ) {
+		$post_title = $post->post_title;
+		$post_link = get_permalink( $post );
+		$post_image = get_the_post_thumbnail( $post );
+		$post_ID = $post->ID;
+		$post_color = get_post_meta( $post_ID, 'color_meta', 1) ;
+		$post_size = $atts[size];
+		$post_style = '';
+		if ( $post_color ) {
+			$post_style = 'style="background-color:' . $post_color . '"';
+		}
+		$post_class = '';
+		if ( $post_size ) {
+			$post_class = ' ' . $post_size;
+		}
 
-	$return_string = 	'<article class="project">';
-	$return_string .=		'<header>';
-	$return_string .= 			'<h1>' . $post_title . '</h1>';
-	$return_string .= 			'<a class="button" href="' . $post_link . '">Learn more</a>';
-	$return_string .=		'</header>';
-	$return_string .= 		'<figure>' . $post_image . '</figure>';
-	$return_string .= 	'</article>';
+		$return_string = 	'<article class="project' . $post_class  . '" ' . $post_style . '>';
+		$return_string .=		'<header>';
+		$return_string .= 			'<h1>' . $post_title . '</h1>';
+		$return_string .= 			'<a class="button" href="' . $post_link . '">Learn more</a>';
+		$return_string .=		'</header>';
+		if ( $post_image  ) {
+		$return_string .= 		'<figure>' . $post_image . '</figure>';
+		}
+		$return_string .= 	'</article>';
 
-	wp_reset_query();
-	return $return_string;
-
+		wp_reset_query();
+		return $return_string;
+	}
 }
 add_shortcode('portfolio-post','show_portfolio_post');
 
@@ -112,12 +126,12 @@ function my_body_classes( $classes ) {
 }
 
 //Enable SVG upload
-function add_svg_to_upload_mimes( $upload_mimes ) {
-	$upload_mimes['svg'] = 'image/svg+xml';
-	$upload_mimes['svgz'] = 'image/svg+xml';
-	return $upload_mimes;
-}
-add_filter( 'upload_mimes', 'add_svg_to_upload_mimes', 10, 1 );
+// function add_svg_to_upload_mimes( $upload_mimes ) {
+// 	$upload_mimes['svg'] = 'image/svg+xml';
+// 	$upload_mimes['svgz'] = 'image/svg+xml';
+// 	return $upload_mimes;
+// }
+// add_filter( 'upload_mimes', 'add_svg_to_upload_mimes', 10, 1 );
 
 //Enable thumbnails for CPT - featured image
 add_theme_support( 'post-thumbnails' );
@@ -146,8 +160,7 @@ add_action("admin_init", "admin_init");
 
 function admin_init(){
     add_meta_box("client_meta", "Client/Project", "client_meta", "portfolio", "side", "high");
-    add_meta_box("display_meta", "Display", "display_meta", "portfolio", "side", "high");
-    add_meta_box("color_meta", "Color (hex)", "color_meta", "portfolio", "side", "low");
+    add_meta_box("color_meta", "Background color (hex)", "color_meta", "portfolio", "side", "low");
 }
 
 function client_meta(){
@@ -158,14 +171,7 @@ function client_meta(){
         <input name="client_meta" value="<?php echo $client_meta; ?>" style="width:100%;" />
     <?php
 }
-function display_meta(){
-    global $post;
-    $custom = get_post_custom($post->ID);
-    $display_meta = $custom["display_meta"][0];
-    ?>
-        <label><input type="checkbox" name="display_meta" <?php if( $display_meta == true ) { ?>checked="checked"<?php } ?> /> 1/2 screen</label>
-    <?php
-}
+
 function color_meta(){
     global $post;
     $custom = get_post_custom($post->ID);
