@@ -118,6 +118,30 @@ body {
 	text-decoration: none;
 }
 
+//.wp-block-group
+div.block{
+	overflow: auto;
+	padding: @hspacing @wspacing;
+
+	h1:first-of-type,
+	h2:first-of-type,
+	h3:first-of-type {
+		margin: 0;
+	}
+
+	h1, h2 {
+		font-size: 2em;
+	}
+
+	.sub-title {
+		text-transform: uppercase;
+		font-weight: 200;
+		letter-spacing: .1em;
+		margin: 0;
+		padding-bottom: 1em;
+	}
+}
+
 header.main-header {
     padding: 0 @wspacing;
     // background: rgba(256, 0, 0, 0.5);
@@ -210,10 +234,6 @@ main {}
 					background-color: red;
 				}
             }
-
         }
-
-
     }
-
 }

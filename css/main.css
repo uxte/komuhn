@@ -398,6 +398,26 @@ body {
   border-radius: 0.5rem;
   text-decoration: none;
 }
+div.block {
+  overflow: auto;
+  padding: 3rem 1.5rem;
+}
+div.block h1:first-of-type,
+div.block h2:first-of-type,
+div.block h3:first-of-type {
+  margin: 0;
+}
+div.block h1,
+div.block h2 {
+  font-size: 2em;
+}
+div.block .sub-title {
+  text-transform: uppercase;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+  margin: 0;
+  padding-bottom: 1em;
+}
 header.main-header {
   padding: 0 1.5rem;
   height: 6rem;
