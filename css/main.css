@@ -465,7 +465,7 @@ header.main-header h2.title span {
   display: none;
 }
 body.page-portfolio main section.portfolio article.project {
-  background-color: #ccc;
+  background-color: lightgrey;
   position: relative;
   height: 100vh;
   width: 100vw;
@@ -503,7 +503,6 @@ body.page-portfolio main section.portfolio article.project:nth-of-type(even) hea
 }
 body.page-portfolio main section.portfolio article.project.half {
   height: 50vh;
-  background-color: red;
 }
 body.single-portfolio main {
   padding: 0 1.5rem;
@@ -519,6 +518,14 @@ body.single-portfolio main section > figure img {
 body.single-portfolio main section > h1,
 body.single-portfolio main section > h2 {
   font-size: 2em;
+  margin: 0.6em 0;
+}
+body.single-portfolio main section > h3 {
+  font-size: 1.5rem;
+  margin: 0.3em 0;
+}
+body.single-portfolio main section > p {
+  margin: 0 0 1.5em 0;
 }
 body.single-portfolio section.project > header {
   overflow: auto;
@@ -549,7 +556,47 @@ body.single-portfolio .project-cover h3 {
   margin: 0;
   font-size: 2rem;
 }
-body.single-portfolio .testimonial {
-  background: red;
+blockquote.testimonial {
+  margin: 3rem 0;
+  overflow: auto;
+}
+blockquote.testimonial header {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+blockquote.testimonial header figure {
+  background-color: lightgrey;
+  overflow: hidden;
+  margin: 0;
+  border-radius: 100%;
+  width: 6rem;
+  height: 6rem;
+}
+blockquote.testimonial header figure img {
+  width: 100%;
+  height: auto;
+}
+blockquote.testimonial header figcaption {
+  max-width: 1em;
+  padding-left: 1em;
+}
+blockquote.testimonial header figcaption cite {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1em;
+  padding-bottom: 0.2em;
+}
+blockquote.testimonial header figcaption span {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  font-weight: 200;
+  letter-spacing: 0.05em;
+}
+blockquote.testimonial p {
+  font-style: italic;
+  margin: 0.5em 0;
 }
 /*# sourceMappingURL=main.css.map */

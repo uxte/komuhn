@@ -122,9 +122,9 @@ function show_testimonial_post( $atts ) {
 		$return_string = 	'<blockquote class="testimonial">';
 		$return_string .=		'<header>';
 		$return_string .= 			'<figure>' . $post_image . '</figure>';
-		$return_string .= 			'<figcaption><cite>' . $post_title . '</cite>' . $post_excerpt . '</figcaption>';
+		$return_string .= 			'<figcaption><cite>' . $post_title . '</cite><span>' . $post_excerpt . '</span></figcaption>';
 		$return_string .=		'</header>';
-		$return_string .=		'<p>' . $post_content . '</p>';
+		$return_string .=		$post_content;
 		$return_string .= 	'</blockquote>';
 
 		wp_reset_query();
