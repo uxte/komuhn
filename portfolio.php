@@ -9,10 +9,4 @@
         </section>
 	</main>
 
-	<footer>
-
-	</footer>
-
-</body>
-
-</html>
+<?php get_footer(); ?>
