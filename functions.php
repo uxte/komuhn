@@ -77,7 +77,7 @@ function show_portfolio_post( $atts ) {
 	$post = $atts[post];
 	$post = get_page_by_path( $post, OBJECT, 'portfolio' ); //slug
 	if ( $post ) {
-		$post_title = $post->post_title;
+		$post_excerpt = $post->post_excerpt;
 		$post_link = get_permalink( $post );
 		$post_image = get_the_post_thumbnail( $post );
 		$post_ID = $post->ID;
@@ -94,8 +94,8 @@ function show_portfolio_post( $atts ) {
 
 		$return_string = 	'<article class="project' . $post_class  . '" ' . $post_style . '>';
 		$return_string .=		'<header>';
-		$return_string .= 			'<h1>' . $post_title . '</h1>';
-		$return_string .= 			'<a class="button" href="' . $post_link . '">Learn more</a>';
+		$return_string .= 			'<h1>' . $post_excerpt . '</h1>';
+		$return_string .= 			'<a class="button white" href="' . $post_link . '">Learn more</a>';
 		$return_string .=		'</header>';
 		if ( $post_image  ) {
 		$return_string .= 		'<figure>' . $post_image . '</figure>';
@@ -107,6 +107,31 @@ function show_portfolio_post( $atts ) {
 	}
 }
 add_shortcode('portfolio-post','show_portfolio_post');
+
+// The testimonial post
+function show_testimonial_post( $atts ) {
+
+	$post = $atts[post];
+	$post = get_page_by_path( $post, OBJECT, 'testimonial' ); //slug
+	if ( $post ) {
+		$post_title = $post->post_title;
+		$post_excerpt = $post->post_excerpt;
+		$post_content = $post->post_content;
+		$post_image = get_the_post_thumbnail( $post );
+
+		$return_string = 	'<blockquote class="testimonial">';
+		$return_string .=		'<header>';
+		$return_string .= 			'<figure>' . $post_image . '</figure>';
+		$return_string .= 			'<figcaption><cite>' . $post_title . '</cite>' . $post_excerpt . '</figcaption>';
+		$return_string .=		'</header>';
+		$return_string .=		'<p>' . $post_content . '</p>';
+		$return_string .= 	'</blockquote>';
+
+		wp_reset_query();
+		return $return_string;
+	}
+}
+add_shortcode('testimonial-post','show_testimonial_post');
 
 
 
@@ -150,6 +175,24 @@ function portfolio_post_type() {
             'show_in_rest' => true,
             'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
             'menu_position' => 5,
+            'menu_icon' => 'dashicons-image-filter'
+        )
+    );
+}
+//CPT Testimonial
+add_action( 'init', 'testimonial_post_type' );
+function testimonial_post_type() {
+    register_post_type( 'testimonial',
+        array(
+            'labels' => array(
+                'name' => __( 'Testimonials' ),
+                'singular_name' => __( 'Testimonial' ),
+                'add_new_item' => __( 'Add New Testimonial' )
+            ),
+            'public' => true,
+            'show_in_rest' => true,
+            'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
+            'menu_position' => 6,
             'menu_icon' => 'dashicons-image-filter'
         )
     );

@@ -388,168 +388,108 @@ textarea {
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
-.aligncenter {
-  display: block;
-  text-align: center;
-  margin: 0 auto;
-}
-.button,
-.wp-block-button__link {
-  display: inline-block;
-  color: #222222;
-  font-weight: bold;
-  padding: 0 2.3em;
-  line-height: 2.7em;
-  border: 2px solid #222222;
-  border-radius: 0.5rem;
-  text-decoration: none;
-  margin-bottom: 1em;
-}
-.button > a,
-.wp-block-button__link > a {
-  color: #222222;
-  text-decoration: none;
-}
-.button.white,
-.wp-block-button__link.white {
-  color: white;
-  border-color: white;
-}
-div.block {
-  overflow: auto;
-  padding: 3rem 1.5rem;
-}
-div.block h1:first-of-type,
-div.block h2:first-of-type,
-div.block h3:first-of-type {
-  margin: 0;
-}
-div.block h1,
-div.block h2 {
-  font-size: 2em;
-}
-div.block .sub-title {
-  text-transform: uppercase;
-  font-weight: 200;
-  letter-spacing: 0.1em;
-  margin: 0;
-  padding-bottom: 1em;
-}
-header.main-header {
-  padding: 0 1.5rem;
-  height: 6rem;
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-}
-header.main-header div.identity {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-}
-header.main-header h1.logo {
-  margin: 0;
-  margin-right: 0.5em;
-}
-header.main-header h1.logo a span {
-  display: none;
-}
-header.main-header h1.logo a img {
-  display: block;
-  max-height: 2rem;
-}
-header.main-header h2.title {
-  margin: 0;
-}
-header.main-header h2.title span {
-  display: none;
-}
-body.page-portfolio main section.portfolio article.project {
-  background-color: #ccc;
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-}
-body.page-portfolio main section.portfolio article.project header {
-  position: relative;
-  z-index: 99;
-  padding: 3rem 1.5rem;
-  color: #fff;
-}
-body.page-portfolio main section.portfolio article.project header h1 {
-  margin: 0;
-}
-body.page-portfolio main section.portfolio article.project header a.button {
-  margin-top: 1.5em;
-}
-body.page-portfolio main section.portfolio article.project figure {
-  margin: 0;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
-}
-body.page-portfolio main section.portfolio article.project figure img {
-  width: 100%;
-  height: auto;
-}
-body.page-portfolio main section.portfolio article.project:first-of-type {
-  height: calc(100vh - 6rem);
-}
-body.page-portfolio main section.portfolio article.project:nth-of-type(even) header {
-  text-align: right;
-}
-body.page-portfolio main section.portfolio article.project.half {
-  height: 50vh;
-  background-color: red;
-}
-body.single-portfolio main {
-  padding: 0 1.5rem;
-}
-body.single-portfolio main section > figure {
-  margin: 3rem 0;
-  overflow: hidden;
-}
-body.single-portfolio main section > figure img {
-  width: 100%;
-  height: auto;
-}
-body.single-portfolio main section > h1,
-body.single-portfolio main section > h2 {
-  font-size: 2em;
-}
-body.single-portfolio section.project > header {
-  overflow: auto;
-  background-color: lightgrey;
-  display: flex;
-  flex-flow: row wrap;
-  align-items: baseline;
-  margin: 0 -1.5rem;
-  padding: 3rem 1.5rem 0 1.5rem;
-  text-transform: uppercase;
-  color: white;
-  font-weight: 200;
-  letter-spacing: 0.05em;
-}
-body.single-portfolio section.project > header h1 {
-  margin: 0;
-  padding-left: 0.2em;
-  font-size: 1em;
-}
-body.single-portfolio .project-cover {
-  overflow: auto;
-  margin: 0 -1.5rem 3rem -1.5rem;
-  padding: 1em 1.5rem 3rem 1.5rem;
-}
-body.single-portfolio .project-cover h1,
-body.single-portfolio .project-cover h2,
-body.single-portfolio .project-cover h3 {
-  margin: 0;
+h1 {
   font-size: 2rem;
 }
-body.single-portfolio .testimonial {
-  background: red;
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
 }
-/*# sourceMappingURL=main.css.map */
+.main-header {
+  padding: 2rem 1.5rem;
+  background-color: white;
+}
+.main-header .logo img {
+  max-width: 220px;
+}
+@media screen and (min-width: 768px) {
+  .portfolio {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+.portfolio .item-project {
+  height: 100vh;
+}
+@media screen and (min-width: 768px) {
+  .portfolio .item-project {
+    width: 100vw;
+  }
+}
+.portfolio .item-project:first-child {
+  height: calc(100vh - 103px);
+}
+.portfolio .item-project:nth-child(even).display-half {
+  justify-content: flex-end;
+}
+.portfolio .item-project:nth-child(even) .item-content {
+  text-align: right;
+}
+@media screen and (min-width: 768px) {
+  .portfolio .item-project:nth-child(even) .item-content .item-title {
+    margin-left: auto;
+  }
+}
+.portfolio .item-project.display-half {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .portfolio .item-project.display-half {
+    width: 50vw;
+    height: 100vh;
+  }
+  .portfolio .item-project.display-half .item-content .item-title {
+    width: 80%;
+  }
+}
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  height: 100vh;
+  padding: 1.5rem;
+}
+.about span {
+  font-weight: 200;
+}
+.btn-white {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 0.8rem 3rem;
+  border: 2px solid white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.item-project {
+  position: relative;
+}
+.item-project .item-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+.item-project .item-content {
+  position: relative;
+  padding: 1.5rem;
+}
+.item-project .item-content .item-title {
+  color: white;
+}
+@media screen and (min-width: 768px) {
+  .item-project .item-content .item-title {
+    width: 50%;
+  }
+}
+.item-project .item-content .btn-white {
+  display: inline-block;
+  margin-top: 2rem;
+}
+/*# sourceMappingURL=_old_main.css.map */

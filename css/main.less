@@ -106,16 +106,36 @@ body {
 	 font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
+main {}
+
+.aligncenter {
+	display: block;
+	text-align: center;
+	margin: 0 auto;
+}
+
 //BUTTONS
-.button {
+.button,
+.wp-block-button__link {
     display: inline-block;
-	color: white;
+	color: @color-black;
 	font-weight: bold;
 	padding: 0 2.3em;
     line-height: 2.7em;
-	border: 2px solid white;
+	border: 2px solid @color-black;
 	border-radius: .5rem;
 	text-decoration: none;
+	margin-bottom: 1em;
+
+	> a {
+		color: @color-black;
+		text-decoration: none;
+	}
+
+	&.white {
+		color: white;
+		border-color: white;
+	}
 }
 
 //.wp-block-group
@@ -177,10 +197,10 @@ header.main-header {
     }
 }
 
-main {}
+
 
 // PAGE PORTFOLIO
-.page-portfolio {
+body.page-portfolio {
 
     main {
 
@@ -236,4 +256,70 @@ main {}
             }
         }
     }
+}
+
+
+// POST PROJECT
+
+body.single-portfolio {
+	main {
+		padding: 0 @wspacing;
+
+		section {
+			> figure {
+				margin: @hspacing 0;
+				overflow: hidden;
+
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+
+			> h1, > h2 {
+				font-size: 2em;
+			}
+		}
+
+	}
+
+	section.project {
+
+		> header {
+			overflow: auto;
+			background-color: lightgrey;
+			display: flex;
+	        flex-flow: row wrap;
+			align-items: baseline;
+			margin: 0 -@wspacing;
+			padding: @hspacing @wspacing 0 @wspacing;
+
+			text-transform: uppercase;
+			color: white;
+			font-weight: 200;
+			letter-spacing: .05em;
+
+			h1 {
+				margin: 0;
+				padding-left: .2em;
+				font-size: 1em;
+				// font-weight: 200;
+			}
+		}
+	}
+
+	.project-cover {
+		overflow: auto;
+		margin: 0 -@wspacing @hspacing -@wspacing;
+		padding: 1em @wspacing @hspacing @wspacing;
+
+		h1, h2, h3 {
+			margin: 0;
+			font-size: 2rem;
+		}
+	}
+
+	.testimonial {
+		background: red;
+	}
 }
