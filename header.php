@@ -19,7 +19,7 @@
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 	<![endif]-->
 
-	<header class="main-header">
+	<header class="main-header wrap">
         <div class="identity">
             <h1 class="logo">
                 <a class="logo" href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>" alt="Logo">

@@ -2,6 +2,9 @@
 @import "variables";
 @import "mixins";
 
+@wspacing: 1.5rem;
+@hspacing: 3rem;
+
 /*! HTML5 Boilerplate v7.3.0 | MIT License | https://html5boilerplate.com/ */
 
 /* main.css 2.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
@@ -119,8 +122,8 @@ main {}
 .wp-block-button__link {
     display: inline-block;
 	color: @color-black;
-	font-weight: bold;
-	padding: 0 2.3em;
+	font-weight: 600;
+	padding: 0 2.5em;
     line-height: 2.7em;
 	border: 2px solid @color-black;
 	border-radius: .5rem;
@@ -139,7 +142,7 @@ main {}
 }
 
 //.wp-block-group
-div.block{
+div.block {
 	overflow: auto;
 	padding: @hspacing @wspacing;
 
@@ -156,14 +159,13 @@ div.block{
 	.sub-title {
 		text-transform: uppercase;
 		font-weight: 200;
-		letter-spacing: .1em;
+		letter-spacing: .05em;
 		margin: 0;
 		padding-bottom: 1em;
 	}
 }
 
 header.main-header {
-    padding: 0 @wspacing;
     // background: rgba(256, 0, 0, 0.5);
     height: 6rem;
 
@@ -178,8 +180,7 @@ header.main-header {
     }
 
     h1.logo {
-        margin: 0;
-        margin-right: 0.5em;
+        margin: 0 0.5em 0 @wspacing;
         a {
             span {
                 display: none;
@@ -253,6 +254,14 @@ body.page-portfolio {
 					height: 50vh;
 				}
             }
+
+			div.info.block {
+				.column:last-of-type {
+					.wp-block-buttons {
+						margin-top: @hspacing - 1em;
+					}
+				}
+			}
         }
     }
 }

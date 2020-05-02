@@ -397,8 +397,8 @@ body {
 .wp-block-button__link {
   display: inline-block;
   color: #222222;
-  font-weight: bold;
-  padding: 0 2.3em;
+  font-weight: 600;
+  padding: 0 2.5em;
   line-height: 2.7em;
   border: 2px solid #222222;
   border-radius: 0.5rem;
@@ -431,12 +431,11 @@ div.block h2 {
 div.block .sub-title {
   text-transform: uppercase;
   font-weight: 200;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   margin: 0;
   padding-bottom: 1em;
 }
 header.main-header {
-  padding: 0 1.5rem;
   height: 6rem;
   display: flex;
   flex-flow: row wrap;
@@ -448,8 +447,7 @@ header.main-header div.identity {
   align-items: center;
 }
 header.main-header h1.logo {
-  margin: 0;
-  margin-right: 0.5em;
+  margin: 0 0.5em 0 1.5rem;
 }
 header.main-header h1.logo a span {
   display: none;
@@ -503,6 +501,9 @@ body.page-portfolio main section.portfolio article.project:nth-of-type(even) hea
 }
 body.page-portfolio main section.portfolio article.project.half {
   height: 50vh;
+}
+body.page-portfolio main section.portfolio div.info.block .column:last-of-type .wp-block-buttons {
+  margin-top: 2rem;
 }
 body.single-portfolio main {
   padding: 0 1.5rem;
