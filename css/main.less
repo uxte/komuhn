@@ -177,6 +177,8 @@ header.main-header {
         display: flex;
         flex-flow: row wrap;
         align-items: center;
+
+		flex-grow: 1; //Push navigation to the right
     }
 
     h1.logo {
@@ -196,6 +198,33 @@ header.main-header {
         span {display: none;}
         margin: 0;
     }
+
+	nav.main-nav {
+
+		ul.menu {
+			padding-left: 0;
+			margin-right: @wspacing;
+
+			display: flex;
+		    flex-flow: row wrap;
+
+			li {
+				list-style-type: none;
+				margin: 0 0.5em;
+				&:last-of-type {
+					margin-right: 0;
+				}
+				a {
+					color: #888;
+					text-decoration: none;
+					font-weight: 600;
+					&:hover {
+						color: inherit;
+					}
+				}
+			}
+		}
+	}
 }
 
 

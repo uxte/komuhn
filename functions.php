@@ -53,6 +53,22 @@ function theme_slug_setup() {
 }
 add_action( 'after_setup_theme', 'theme_slug_setup' );
 
+//Add custom menu functionality
+function new_custom_menu() {
+  register_nav_menu('my-custom-menu',__( 'My Custom Menu' ));
+}
+add_action( 'init', 'new_custom_menu' );
+
+function add_additional_class_on_li($classes, $item, $args) {
+    if(isset($args->add_li_class)) {
+        $classes[] = $args->add_li_class;
+    }
+    return $classes;
+}
+add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
+
+
+
 // /**
 //  * Add custom CSS and JS
 //  */

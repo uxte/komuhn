@@ -356,6 +356,14 @@ div.block p {
   margin: 0;
   margin-bottom: 1em;
 }
+header.main-header nav.main-nav ul.menu {
+  margin-right: 100px;
+}
+header.main-header nav.main-nav ul.menu li a {
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
 body.page-portfolio main section.portfolio {
   display: flex;
   flex-flow: row wrap;

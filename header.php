@@ -32,4 +32,13 @@
             </h2>
         </div>
 
+        <nav class="main-nav" id="main-nav">
+            <?php
+            wp_nav_menu( array(
+                'menu'            => 'top-menu',
+                'container'       => ''
+            ));
+            ?>
+        </nav>
+
 	</header>
