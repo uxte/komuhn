@@ -218,16 +218,17 @@ function testimonial_post_type() {
 add_action("admin_init", "admin_init");
 
 function admin_init(){
-    add_meta_box("client_meta", "Client/Project", "client_meta", "portfolio", "side", "high");
+    add_meta_box("cover_meta", "Cover text", "cover_meta", "portfolio", "side", "high");
     add_meta_box("color_meta", "Background color (hex)", "color_meta", "portfolio", "side", "low");
 }
 
-function client_meta(){
+function cover_meta(){
     global $post;
     $custom = get_post_custom($post->ID);
-    $client_meta = $custom["client_meta"][0];
+    $cover_meta = $custom["cover_meta"][0];
     ?>
-        <input name="client_meta" value="<?php echo $client_meta; ?>" style="width:100%;" />
+		<label for="cover_meta">Text that will appear on the page cover.</label>
+		<textarea name="cover_meta" rows="4" style="width:100%;"><?php echo $cover_meta; ?></textarea>
     <?php
 }
 
@@ -243,9 +244,7 @@ function color_meta(){
 add_action('save_post', 'save_details');
     function save_details(){
         global $post;
-
-        update_post_meta($post->ID, "client_meta", $_POST["client_meta"]);
-        update_post_meta($post->ID, "display_meta", $_POST["display_meta"]);
+        update_post_meta($post->ID, "cover_meta", $_POST["cover_meta"]);
         update_post_meta($post->ID, "color_meta", $_POST["color_meta"]);
     }
 ?>

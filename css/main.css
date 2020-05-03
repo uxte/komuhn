@@ -556,28 +556,23 @@ body.single-portfolio section.project > header {
   display: flex;
   flex-flow: row wrap;
   align-items: baseline;
-  margin: 0 -1.5rem;
+  margin: 0 -1.5rem 3rem -1.5rem;
   padding: 3rem 1.5rem 0 1.5rem;
   text-transform: uppercase;
   color: white;
-  font-weight: 200;
+  font-weight: 300;
   letter-spacing: 0.05em;
 }
 body.single-portfolio section.project > header h1 {
   margin: 0;
-  padding-left: 0.2em;
-  font-size: 1em;
+  padding: 0 0 1em 0.2em;
+  font-size: 1rem;
 }
-body.single-portfolio .project-cover {
-  overflow: auto;
-  margin: 0 -1.5rem 3rem -1.5rem;
-  padding: 1em 1.5rem 3rem 1.5rem;
-}
-body.single-portfolio .project-cover h1,
-body.single-portfolio .project-cover h2,
-body.single-portfolio .project-cover h3 {
+body.single-portfolio section.project > header h2 {
   margin: 0;
   font-size: 2rem;
+  text-transform: none;
+  padding: 0 0 3rem 0;
 }
 blockquote.testimonial {
   margin: 3rem 0;

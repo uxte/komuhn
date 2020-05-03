@@ -336,31 +336,26 @@ body.single-portfolio {
 			display: flex;
 	        flex-flow: row wrap;
 			align-items: baseline;
-			margin: 0 -@wspacing;
+			margin: 0 -@wspacing @hspacing -@wspacing;
 			padding: @hspacing @wspacing 0 @wspacing;
 
 			text-transform: uppercase;
 			color: white;
-			font-weight: 200;
+			font-weight: 300;
 			letter-spacing: .05em;
 
 			h1 {
 				margin: 0;
-				padding-left: .2em;
-				font-size: 1em;
-				// font-weight: 200;
+				padding: 0 0 1em .2em;
+				font-size: 1rem;
 			}
-		}
-	}
 
-	.project-cover {
-		overflow: auto;
-		margin: 0 -@wspacing @hspacing -@wspacing;
-		padding: 1em @wspacing @hspacing @wspacing;
-
-		h1, h2, h3 {
-			margin: 0;
-			font-size: 2rem;
+			h2 {
+				margin: 0;
+				font-size: 2rem;
+				text-transform: none;
+				padding: 0 0 @hspacing 0;
+			}
 		}
 	}
 }
