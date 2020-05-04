@@ -326,7 +326,7 @@ header.main-header h1.logo a img {
   max-height: 2.4rem;
 }
 .button,
-.wp-block-button__link {
+.wp-block-button {
   font-size: 1.1rem;
   font-weight: 500;
   letter-spacing: 0.03em;
@@ -376,7 +376,7 @@ body.page-portfolio main section.portfolio article.project {
   align-items: center;
 }
 body.page-portfolio main section.portfolio article.project header {
-  padding: 50px 100px;
+  padding: 100px 100px;
   max-width: 30rem;
 }
 body.page-portfolio main section.portfolio article.project header h1 {
@@ -391,6 +391,10 @@ body.page-portfolio main section.portfolio article.project figure {
   right: 0;
   bottom: 0;
 }
+body.page-portfolio main section.portfolio article.project figure img {
+  width: auto;
+  height: 100%;
+}
 body.page-portfolio main section.portfolio article.project:nth-of-type(even) {
   justify-content: flex-end;
 }
@@ -403,7 +407,7 @@ body.page-portfolio main section.portfolio article.project:first-of-type {
   height: 720px;
 }
 body.page-portfolio main section.portfolio article.project.half {
-  flex: 2;
+  flex: 0 0 50%;
   height: 640px;
 }
 body.page-portfolio main section.portfolio article.project.half header {
@@ -422,5 +426,35 @@ body.page-portfolio main section.portfolio div.info.block .column:last-of-type >
 }
 body.page-portfolio main section.portfolio div.info.block .column:last-of-type > div .wp-block-buttons {
   align-self: flex-end;
+}
+body.single-portfolio main {
+  padding: 0 100px;
+}
+body.single-portfolio main section > figure {
+  margin: 100px 0;
+}
+body.single-portfolio main section > h1,
+body.single-portfolio main section > h2 {
+  font-size: 3rem;
+}
+body.single-portfolio main section > h3 {
+  font-size: 1.5rem;
+}
+body.single-portfolio section.project > header {
+  margin: 0 -100px 100px -100px;
+  padding: 100px;
+  min-height: 520px;
+}
+body.single-portfolio section.project > header h1 {
+  font-size: 1.1rem;
+}
+body.single-portfolio section.project > header h2 {
+  font-size: 4rem;
+  line-height: 1.3;
+  padding: 0;
+}
+body.single-portfolio .wrap {
+  max-width: none;
+  margin: 0;
 }
 /*# sourceMappingURL=full.css.map */

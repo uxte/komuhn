@@ -394,26 +394,41 @@ body {
   margin: 0 auto;
 }
 .button,
-.wp-block-button__link {
+.wp-block-button {
   display: inline-block;
   color: #222222;
   font-weight: 600;
-  padding: 0 2.5em;
-  line-height: 2.7em;
   border: 2px solid #222222;
   border-radius: 0.5rem;
   text-decoration: none;
   margin-bottom: 1em;
 }
 .button > a,
-.wp-block-button__link > a {
+.wp-block-button > a {
   color: #222222;
   text-decoration: none;
+  display: inline-block;
+  padding: 0 2.5em;
+  line-height: 2.7em;
 }
 .button.white,
-.wp-block-button__link.white {
+.wp-block-button.white {
   color: white;
   border-color: white;
+}
+.button.lighten,
+.wp-block-button.lighten {
+  border-color: #bbbbbb;
+  color: #a2a2a2;
+}
+.button.lighten > a,
+.wp-block-button.lighten > a {
+  color: #a2a2a2;
+}
+a.button {
+  display: inline-block;
+  padding: 0 2.5em;
+  line-height: 2.7em;
 }
 div.block {
   overflow: auto;

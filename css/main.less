@@ -1,9 +1,10 @@
 @import "normalize";
-@import "variables";
+@import "variables"; //Global
 @import "mixins";
 
-@wspacing: 1.5rem;
-@hspacing: 3rem;
+//Variables
+@x-spacing: 	1.5rem;
+@y-spacing: 	3rem;
 
 /*! HTML5 Boilerplate v7.3.0 | MIT License | https://html5boilerplate.com/ */
 
@@ -119,12 +120,10 @@ main {}
 
 //BUTTONS
 .button,
-.wp-block-button__link {
+.wp-block-button {
     display: inline-block;
 	color: @color-black;
 	font-weight: 600;
-	padding: 0 2.5em;
-    line-height: 2.7em;
 	border: 2px solid @color-black;
 	border-radius: .5rem;
 	text-decoration: none;
@@ -133,18 +132,35 @@ main {}
 	> a {
 		color: @color-black;
 		text-decoration: none;
+		display: inline-block;
+		padding: 0 2.5em;
+		line-height: 2.7em;
 	}
 
 	&.white {
 		color: white;
 		border-color: white;
 	}
+
+	&.lighten {
+		border-color: lighten(@color-black, 60%);
+		color: lighten(@color-black, 50%);
+		> a {
+			color: lighten(@color-black, 50%);
+		}
+	}
+}
+
+a.button {
+	display: inline-block;
+	padding: 0 2.5em;
+    line-height: 2.7em;
 }
 
 //.wp-block-group
 div.block {
 	overflow: auto;
-	padding: @hspacing @wspacing;
+	padding: @y-spacing @x-spacing;
 
 	h1:first-of-type,
 	h2:first-of-type,
@@ -182,7 +198,7 @@ header.main-header {
     }
 
     h1.logo {
-        margin: 0 0.5em 0 @wspacing;
+        margin: 0 0.5em 0 @x-spacing;
         a {
             span {
                 display: none;
@@ -203,7 +219,7 @@ header.main-header {
 
 		ul.menu {
 			padding-left: 0;
-			margin-right: @wspacing;
+			margin-right: @x-spacing;
 
 			display: flex;
 		    flex-flow: row wrap;
@@ -246,7 +262,7 @@ body.page-portfolio {
                 header {
                     position: relative;
                     z-index: 99;
-                    padding: @hspacing @wspacing;
+                    padding: @y-spacing @x-spacing;
                     color: #fff;
 
                     h1 {
@@ -287,7 +303,7 @@ body.page-portfolio {
 			div.info.block {
 				.column:last-of-type {
 					.wp-block-buttons {
-						margin-top: @hspacing - 1em;
+						margin-top: @y-spacing - 1em;
 					}
 				}
 			}
@@ -300,11 +316,11 @@ body.page-portfolio {
 
 body.single-portfolio {
 	main {
-		padding: 0 @wspacing;
+		padding: 0 @x-spacing;
 
 		section {
 			> figure {
-				margin: @hspacing 0;
+				margin: @y-spacing 0;
 				overflow: hidden;
 
 				img {
@@ -336,8 +352,8 @@ body.single-portfolio {
 			display: flex;
 	        flex-flow: row wrap;
 			align-items: baseline;
-			margin: 0 -@wspacing @hspacing -@wspacing;
-			padding: @hspacing @wspacing 0 @wspacing;
+			margin: 0 -@x-spacing @y-spacing -@x-spacing;
+			padding: @y-spacing @x-spacing 0 @x-spacing;
 
 			text-transform: uppercase;
 			color: white;
@@ -354,14 +370,14 @@ body.single-portfolio {
 				margin: 0;
 				font-size: 2rem;
 				text-transform: none;
-				padding: 0 0 @hspacing 0;
+				padding: 0 0 @y-spacing 0;
 			}
 		}
 	}
 }
 
 blockquote.testimonial {
-	margin: @hspacing 0;
+	margin: @y-spacing 0;
 	overflow: auto;
 
 	header {

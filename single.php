@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-    <main>
+    <main class="wrap">
         <section class="project">
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post();
             $post_cover_text = get_post_meta( $post->ID, 'cover_meta', 1);

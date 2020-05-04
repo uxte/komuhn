@@ -1,9 +1,17 @@
 @import "normalize";
-@import "variables";
+@import "variables"; //Global
 @import "mixins";
 
-@wspacing: 100px;
-@hspacing: 50px;
+//Variables
+@x-spacing: 	100px;
+@y-spacing: 	100px;
+@col-spacing:	 50px;
+
+@font-size-title: 	4rem;
+@font-size-h1: 		3rem;
+@font-size-h3: 		1.5rem;
+@font-size-p: 		1.1rem;
+
 
 // html { font-size: 1.1em; }
 body {}
@@ -12,7 +20,7 @@ h1, h2 {
 	font-weight: 500;
 }
 p {
-	font-size: 1.1rem;
+	font-size: @font-size-p;
 	line-height: 1.5;
 }
 
@@ -27,7 +35,7 @@ header.main-header {
     height: 150px;
 
     h1.logo {
-		margin-left: @wspacing;
+		margin-left: @x-spacing;
         a {
             img {
                 max-height: 2.4rem;
@@ -41,21 +49,35 @@ main {
 
 //BUTTONS
 .button,
-.wp-block-button__link {
+.wp-block-button {
 	font-size: 1.1rem;
 	font-weight: 500;
 	letter-spacing: .03em;
 
 	> a {
+
+	}
+
+	&:hover {
+		// background-color: @color-black;
 	}
 
 	&.white {
+		&:hover {
+			// background-color: @color-white;
+		}
 	}
+
+	&.lighten {
+		&:hover {
+		}
+	}
+
 }
 
 //.wp-block-group
 div.block {
-	padding: @wspacing;
+	padding: @x-spacing;
 
 	//.wp-block-group__inner-container
 	> div {
@@ -67,16 +89,16 @@ div.block {
 			flex: 1 1 50%;
 
 			&:first-of-type {
-				padding-right: (@wspacing / 2);
+				padding-right: (@x-spacing / 2);
 			}
 			&:last-of-type {
-				padding-left: (@wspacing / 2);
+				padding-left: (@x-spacing / 2);
 			}
 		}
 	}
 
 	h1, h2 {
-		font-size: 3rem;
+		font-size: @font-size-h1;
 		line-height: 1.3;
 	}
 
@@ -93,10 +115,10 @@ header.main-header {
 	nav.main-nav {
 
 		ul.menu {
-			margin-right: @wspacing;
+			margin-right: @x-spacing;
 			li {
 				a {
-					font-size: 1.1rem;
+					font-size: @font-size-p;
 					font-weight: 500;
 					letter-spacing: 0.02em;
 				}
@@ -123,20 +145,24 @@ body.page-portfolio {
 			    align-items: center;
 
                 header {
-					padding: @hspacing @wspacing;
+					padding: @y-spacing @x-spacing;
 					max-width: 30rem;
 
 					h1 {
-                        font-size: 3rem;
+                        font-size: @font-size-h1;
 						line-height: 1.3;
                     }
 					a.button {
-                        margin-top: @hspacing - 10px;
+                        margin-top: (@y-spacing/2) - 10px;
                     }
                 }
 
                 figure {
                     left: auto; right: 0; bottom: 0;
+					img {
+                        width: auto;
+                        height: 100%;
+                    }
                 }
 
 				&:nth-of-type(even) {
@@ -151,7 +177,7 @@ body.page-portfolio {
                     height: 720px;
                 }
 				&.half {
-					flex: 2;
+					flex: 0 0 50%;
 					height: 640px;
 
 					header {
@@ -179,5 +205,53 @@ body.page-portfolio {
 				}
 			}
 		}
+	}
+}
+
+
+// POST PROJECT
+body.single-portfolio {
+	main {
+		padding: 0 @x-spacing;
+
+		section {
+			> figure {
+				margin: @y-spacing 0;
+			}
+
+			> h1, > h2 {
+				font-size: @font-size-h1;
+			}
+			> h3 {
+				font-size: @font-size-h3;
+			}
+			> p {
+			}
+		}
+
+	}
+
+	section.project {
+
+		> header {
+			margin: 0 -@x-spacing @y-spacing -@x-spacing;
+			padding: @x-spacing;
+			min-height: 720px - @x-spacing*2;
+
+			h1 {
+				font-size: @font-size-p;
+			}
+
+			h2 {
+				font-size: @font-size-title;
+				line-height: 1.3;
+				padding: 0;
+			}
+		}
+	}
+
+	.wrap {
+		max-width: none;
+		margin: 0;
 	}
 }
