@@ -24,7 +24,7 @@ p {
 	line-height: 1.5;
 }
 
-.wrap{
+.wrap {
 	overflow: auto;
 	max-width: 1280px;
 	margin: 0 auto; //center
@@ -130,7 +130,13 @@ header.main-header {
 // PAGE PORTFOLIO
 body.page-portfolio {
 
+	header.main-header {
+		.wrap;
+	}
+
     main {
+
+		.wrap;
 
         section.portfolio {
 			display: flex;
@@ -211,8 +217,18 @@ body.page-portfolio {
 
 // POST PROJECT
 body.single-portfolio {
+
+	display: flex;
+	flex-flow: row wrap;
+
+	header.main-header {
+		flex: 0 1 1440px;
+	}
+
 	main {
 		padding: 0 @x-spacing;
+
+		flex: 0 1 (960px - @x-spacing*2);
 
 		section {
 			> figure {
@@ -250,8 +266,11 @@ body.single-portfolio {
 		}
 	}
 
-	.wrap {
-		max-width: none;
-		margin: 0;
+	aside.sidebar {
+		flex: 0 1 480px;
+	}
+
+	footer.main-footer {
+		flex: 0 1 100%;
 	}
 }

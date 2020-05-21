@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-    <main class="wrap">
+    <main>
         <section class="project">
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post();
             $post_cover_text = get_post_meta( $post->ID, 'cover_meta', 1);
@@ -15,5 +15,10 @@
             <?php endwhile; endif; ?>
         </section>
 	</main>
+
+    <aside class="sidebar">
+        sidebar
+
+    </aside>
 
 <?php get_footer(); ?>
