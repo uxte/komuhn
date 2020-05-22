@@ -589,6 +589,9 @@ body.single-portfolio section.project > header h2 {
   text-transform: none;
   padding: 0 0 3rem 0;
 }
+body.single-portfolio aside.sidebar {
+  background-color: #E9E9E9;
+}
 blockquote.testimonial {
   margin: 3rem 0;
   overflow: auto;
@@ -631,5 +634,9 @@ blockquote.testimonial header figcaption span {
 blockquote.testimonial p {
   font-style: italic;
   margin: 0.5em 0;
+}
+footer.main-footer {
+  height: 50vh;
+  background-color: #ccc;
 }
 /*# sourceMappingURL=main.css.map */

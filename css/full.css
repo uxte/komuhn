@@ -364,6 +364,16 @@ header.main-header nav.main-nav ul.menu li a {
   font-weight: 500;
   letter-spacing: 0.02em;
 }
+body.page-portfolio header.main-header {
+  overflow: auto;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+body.page-portfolio main {
+  overflow: auto;
+  max-width: 1280px;
+  margin: 0 auto;
+}
 body.page-portfolio main section.portfolio {
   display: flex;
   flex-flow: row wrap;
@@ -427,8 +437,16 @@ body.page-portfolio main section.portfolio div.info.block .column:last-of-type >
 body.page-portfolio main section.portfolio div.info.block .column:last-of-type > div .wp-block-buttons {
   align-self: flex-end;
 }
+body.single-portfolio {
+  display: flex;
+  flex-flow: row wrap;
+}
+body.single-portfolio header.main-header {
+  flex: 0 1 1440px;
+}
 body.single-portfolio main {
   padding: 0 100px;
+  flex: 0 1 760px;
 }
 body.single-portfolio main section > figure {
   margin: 100px 0;
@@ -453,8 +471,10 @@ body.single-portfolio section.project > header h2 {
   line-height: 1.3;
   padding: 0;
 }
-body.single-portfolio .wrap {
-  max-width: none;
-  margin: 0;
+body.single-portfolio aside.sidebar {
+  flex: 0 1 480px;
+}
+body.single-portfolio footer.main-footer {
+  flex: 0 1 100%;
 }
 /*# sourceMappingURL=full.css.map */
