@@ -67,7 +67,18 @@ function add_additional_class_on_li($classes, $item, $args) {
 }
 add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
 
+/**
+ * Add custom image sizes attribute to enhance responsive image functionality
+ * for content images.
+ */
+function image_sizes_attr( $sizes, $size ) {
+	$width = $size[0];
 
+	$sizes = '(max-width: 640px) 100vw, (max-width: 768px) 80vw, (max-width: 928px) 60vw, 80vw';
+
+	return $sizes;
+}
+add_filter( 'wp_calculate_image_sizes', 'image_sizes_attr', 10, 2 );
 
 // /**
 //  * Add custom CSS and JS
