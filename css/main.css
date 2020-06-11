@@ -568,9 +568,6 @@ body.single-portfolio main section > p {
 body.single-portfolio section.project > header {
   overflow: auto;
   background-color: lightgrey;
-  display: flex;
-  flex-flow: row wrap;
-  align-items: baseline;
   margin: 0 -1.5rem 3rem -1.5rem;
   padding: 3rem 1.5rem 0 1.5rem;
   text-transform: uppercase;
@@ -578,9 +575,13 @@ body.single-portfolio section.project > header {
   font-weight: 300;
   letter-spacing: 0.05em;
 }
+body.single-portfolio section.project > header span.wrapper {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
 body.single-portfolio section.project > header h1 {
+  display: inline-block;
   margin: 0;
-  padding: 0 0 1em 0.2em;
   font-size: 1rem;
 }
 body.single-portfolio section.project > header h2 {
@@ -588,9 +589,6 @@ body.single-portfolio section.project > header h2 {
   font-size: 2rem;
   text-transform: none;
   padding: 0 0 3rem 0;
-}
-body.single-portfolio aside.sidebar {
-  background-color: #E9E9E9;
 }
 blockquote.testimonial {
   margin: 3rem 0;
@@ -634,6 +632,9 @@ blockquote.testimonial header figcaption span {
 blockquote.testimonial p {
   font-style: italic;
   margin: 0.5em 0;
+}
+aside.sidebar {
+  background-color: #E9E9E9;
 }
 footer.main-footer {
   height: 50vh;

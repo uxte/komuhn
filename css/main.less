@@ -349,9 +349,7 @@ body.single-portfolio {
 		> header {
 			overflow: auto;
 			background-color: lightgrey;
-			display: flex;
-	        flex-flow: row wrap;
-			align-items: baseline;
+
 			margin: 0 -@x-spacing @y-spacing -@x-spacing;
 			padding: @y-spacing @x-spacing 0 @x-spacing;
 
@@ -360,9 +358,14 @@ body.single-portfolio {
 			font-weight: 300;
 			letter-spacing: .05em;
 
+			span.wrapper {
+				display: inline-block;
+				margin-bottom: @x-spacing;
+			}
+
 			h1 {
+				display: inline-block;
 				margin: 0;
-				padding: 0 0 1em .2em;
 				font-size: 1rem;
 			}
 
@@ -373,10 +376,6 @@ body.single-portfolio {
 				padding: 0 0 @y-spacing 0;
 			}
 		}
-	}
-
-	aside.sidebar {
-		background-color: #E9E9E9;
 	}
 }
 
@@ -427,6 +426,12 @@ blockquote.testimonial {
 		font-style: italic;
 		margin: .5em 0;
 	}
+}
+
+
+//
+aside.sidebar {
+	background-color: #E9E9E9;
 }
 
 // MAIN-FOOTER

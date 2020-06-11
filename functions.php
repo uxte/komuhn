@@ -242,9 +242,9 @@ function color_meta(){
 }
 
 add_action('save_post', 'save_details');
-    function save_details(){
-        global $post;
-        update_post_meta($post->ID, "cover_meta", $_POST["cover_meta"]);
-        update_post_meta($post->ID, "color_meta", $_POST["color_meta"]);
-    }
+function save_details(){
+    global $post;
+    update_post_meta($post->ID, "cover_meta", $_POST["cover_meta"]);
+    update_post_meta($post->ID, "color_meta", $_POST["color_meta"]);
+}
 ?>

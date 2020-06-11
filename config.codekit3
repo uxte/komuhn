@@ -215,6 +215,16 @@
 		"oAP": "/header.php",
 		"oF": 0
 		},
+	"/img/background-sidebar.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/img/background-sidebar.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 52780316221407,
+		"prP": 0
+		},
 	"/img/inecc.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -305,6 +315,14 @@
 		"oAP": "/style-min.css",
 		"oF": 0,
 		"oS": 3
+		},
+	"/template-parts/sidebar.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/template-parts/sidebar.php",
+		"oF": 0
 		}
 	},
 "hooks": [
