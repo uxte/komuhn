@@ -387,11 +387,15 @@ textarea {
 	 ========================================================================== */
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: #222222;
 }
 .aligncenter {
   display: block;
   text-align: center;
   margin: 0 auto;
+}
+a {
+  color: inherit;
 }
 .button,
 .wp-block-button {
@@ -441,7 +445,7 @@ div.block h3:first-of-type {
 }
 div.block h1,
 div.block h2 {
-  font-size: 2em;
+  font-size: 2rem;
 }
 div.block .sub-title {
   text-transform: uppercase;
@@ -555,7 +559,7 @@ body.single-portfolio main section > figure img {
 }
 body.single-portfolio main section > h1,
 body.single-portfolio main section > h2 {
-  font-size: 2em;
+  font-size: 2rem;
   margin: 0.6em 0;
 }
 body.single-portfolio main section > h3 {
@@ -564,6 +568,10 @@ body.single-portfolio main section > h3 {
 }
 body.single-portfolio main section > p {
   margin: 0 0 1.5em 0;
+  line-height: 1.6em;
+}
+body.single-portfolio main section > p.has-background {
+  padding: 0 1.5rem 1.5rem 1.5rem;
 }
 body.single-portfolio section.project > header {
   overflow: auto;
@@ -589,6 +597,27 @@ body.single-portfolio section.project > header h2 {
   font-size: 2rem;
   text-transform: none;
   padding: 0 0 3rem 0;
+}
+p.has-medium-font-size {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #333;
+}
+blockquote.quote {
+  margin: 0;
+  margin-bottom: 1.5em;
+  border-left: #e9e9e9 0.7rem solid;
+  padding-left: 1rem;
+}
+blockquote.quote > p {
+  font-family: Georgia, serif;
+  font-size: 1.7rem;
+  margin: 0;
+  margin-bottom: 0.5em;
+}
+blockquote.quote cite {
+  font-size: 0.9rem;
+  color: #555555;
 }
 blockquote.testimonial {
   margin: 3rem 0;
@@ -633,11 +662,110 @@ blockquote.testimonial p {
   font-style: italic;
   margin: 0.5em 0;
 }
+.wp-block-spacer {
+  height: 2rem !important;
+}
+.wp-block-media-text {
+  padding: 1.5rem;
+  display: grid;
+}
+.wp-block-media-text figure {
+  margin: 0;
+}
+.wp-block-media-text figure img {
+  width: 100%;
+  height: auto;
+}
+.wp-block-media-text .wp-block-media-text__content {
+  margin-left: 2rem;
+}
+.wp-block-media-text .wp-block-media-text__content h1,
+.wp-block-media-text .wp-block-media-text__content h2,
+.wp-block-media-text .wp-block-media-text__content h3,
+.wp-block-media-text .wp-block-media-text__content h4,
+.wp-block-media-text .wp-block-media-text__content p {
+  margin: 0;
+}
+.wp-block-media-text.is-stacked-on-mobile {
+  display: block;
+}
+.wp-block-media-text.is-stacked-on-mobile figure {
+  margin-bottom: 2em;
+}
+.wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content {
+  margin-left: 0;
+}
+.wp-block-group {
+  overflow: hidden;
+}
+.wp-block-group.has-background {
+  padding: 3rem 1.5rem;
+}
+.wp-block-group p {
+  margin: 0;
+}
+.wp-block-group .wp-block-media-text {
+  padding: 0;
+  margin-bottom: 2em;
+}
+.no-margin {
+  margin: auto -1.5rem !important;
+}
+.wp-block-table {
+  margin: 0;
+}
+table {
+  border: 1px solid #000;
+  border-collapse: collapse;
+  width: 100%;
+}
+table th,
+table td {
+  border: 1px solid black;
+}
+table td {
+  padding: 1em;
+}
+.co2-table h2.title {
+  font-size: 3rem;
+  line-height: 1em;
+}
+.co2-table figure img {
+  width: 100px;
+}
 aside.sidebar {
-  background-color: #E9E9E9;
+  background-color: #e9e9e9;
+  margin-top: 3rem;
+}
+aside.sidebar nav.nav-next-post {
+  position: relative;
+}
+aside.sidebar nav.nav-next-post a.next-post {
+  display: block;
+  padding: 3rem 1.5rem;
+  text-decoration: none;
+}
+aside.sidebar nav.nav-next-post a.next-post span.caption {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0.5em 1em;
+  background-color: #ccc;
+  color: #e9e9e9;
+  font-weight: 500;
+}
+aside.sidebar nav.nav-next-post a.next-post span.title {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+  display: block;
+}
+aside.sidebar nav.nav-next-post a.next-post span.cover-text {
+  font-size: 1.3rem;
+  font-weight: 500;
 }
 footer.main-footer {
   height: 50vh;
-  background-color: #ccc;
+  background-color: #513097;
 }
 /*# sourceMappingURL=main.css.map */

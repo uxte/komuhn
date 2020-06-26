@@ -311,6 +311,12 @@ p {
   font-size: 1.1rem;
   line-height: 1.5;
 }
+.width-50 {
+  width: 50%;
+}
+.width-75 {
+  width: 75%;
+}
 .wrap {
   overflow: auto;
   max-width: 1280px;
@@ -466,6 +472,9 @@ body.single-portfolio main section > h2 {
 body.single-portfolio main section > h3 {
   font-size: 1.5rem;
 }
+body.single-portfolio main section > p.has-background {
+  padding: 0 80px 2em 80px;
+}
 body.single-portfolio section.project > header {
   margin: 0 -80px 80px -80px;
   padding: 80px;
@@ -486,6 +495,33 @@ body.single-portfolio aside.sidebar {
 body.single-portfolio footer.main-footer {
   flex: 0 1 100%;
 }
+blockquote.quote {
+  max-width: 80%;
+}
+blockquote.quote > p {
+  font-size: 2rem;
+}
+.wp-block-media-text .wp-block-media-text__content h1 {
+  font-size: 3rem;
+}
+.wp-block-media-text .wp-block-media-text__content h2 {
+  font-size: 2rem;
+}
+.wp-block-media-text .wp-block-media-text__content h3 {
+  font-size: 1.5rem;
+}
+.wp-block-media-text.no-margin {
+  padding-left: 80px;
+}
+.wp-block-group.has-background {
+  padding: 80px 80px;
+}
+.no-margin {
+  margin: auto 0 auto -80px !important;
+}
+.co2-table h2.title {
+  font-size: 4rem;
+}
 aside.sidebar {
   background-color: #ffffff;
   background-image: url('../img/background-sidebar.svg');
@@ -493,6 +529,7 @@ aside.sidebar {
   background-repeat: no-repeat;
   overflow: hidden;
   width: 480px;
+  margin: 0;
 }
 aside.sidebar nav.nav-next-post a.next-post {
   display: block;
@@ -507,6 +544,9 @@ aside.sidebar nav.nav-next-post a.next-post span {
   background: linear-gradient(to right, #DBDBDB 15%, #ffffff 50%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+aside.sidebar nav.nav-next-post a.next-post span.caption {
+  visibility: hidden;
 }
 aside.sidebar nav.nav-next-post a.next-post span.title {
   font-size: 1.1rem;

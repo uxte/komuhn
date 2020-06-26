@@ -9,22 +9,6 @@
 	],
 "creatorBuild": "32147",
 "files": {
-	"/.ftpconfig": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/.ftpconfig",
-		"oF": 0
-		},
-	"/.ftpignore": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/.ftpignore",
-		"oF": 0
-		},
 	"/.gitignore": {
 		"cB": 0,
 		"ft": 8192,
@@ -67,7 +51,7 @@
 		"iI": 0,
 		"ma": 1,
 		"mS": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/css/_old_main.css",
 		"oF": 0,
 		"oS": 0,

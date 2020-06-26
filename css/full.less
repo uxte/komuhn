@@ -9,6 +9,7 @@
 
 @font-size-title: 	4rem;
 @font-size-h1: 		3rem;
+@font-size-h2: 		2rem;
 @font-size-h3: 		1.5rem;
 @font-size-p: 		1.1rem;
 
@@ -23,6 +24,10 @@ p {
 	font-size: @font-size-p;
 	line-height: 1.5;
 }
+
+// Text width
+.width-50 { width: 50%; }
+.width-75 { width: 75%; }
 
 .wrap {
 	overflow: auto;
@@ -250,6 +255,9 @@ body.single-portfolio {
 				font-size: @font-size-h3;
 			}
 			> p {
+				&.has-background {
+					padding: 0 @x-spacing 2em @x-spacing;
+				}
 			}
 		}
 	}
@@ -283,6 +291,65 @@ body.single-portfolio {
 	}
 }
 
+// .wp-block-quote
+blockquote.quote {
+	max-width: 80%;
+
+	> p {
+		font-size: 2rem;
+	}
+}
+
+// Two column block Media + text
+.wp-block-media-text {
+
+	figure {
+		img {}
+	}
+	.wp-block-media-text__content {
+
+		h1 {font-size: @font-size-h1;}
+		h2 {font-size: @font-size-h2;}
+		h3 {font-size: @font-size-h3;}
+
+		p {}
+	}
+
+	// &.is-stacked-on-mobile {
+	// 	display: grid;
+	// 	figure {
+	// 		margin-bottom: 0;
+	// 	}
+	// 	.wp-block-media-text__content {
+	// 		margin-left: 2rem;
+	// 	}
+	// }
+
+	&.no-margin {
+		padding-left: @x-spacing;
+	}
+}
+
+//Block group
+.wp-block-group {
+	&.has-background {
+		padding: @y-spacing @x-spacing;
+	}
+}
+
+.no-margin {
+	margin: auto 0 auto -@x-spacing !important;
+}
+
+//PAGE RELATED STYLES
+
+.co2-table {
+	h2.title {
+		font-size: @font-size-title;
+	}
+}
+
+
 aside.sidebar {
 	background-color: @color-white;
 	background-image: url('../img/background-sidebar.svg');
@@ -290,6 +357,7 @@ aside.sidebar {
 	background-repeat: no-repeat;
 	overflow: hidden;
 	width: 480px;
+	margin: 0;
 
 	nav.nav-next-post {
 
@@ -308,6 +376,9 @@ aside.sidebar {
 				background: linear-gradient(to right, #DBDBDB 15%, #ffffff 50%);
 				-webkit-background-clip: text;
 				-webkit-text-fill-color: transparent;
+			}
+			span.caption {
+				visibility: hidden;
 			}
 			span.title {
 				font-size: @font-size-p;
