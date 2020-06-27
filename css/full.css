@@ -495,8 +495,8 @@ body.single-portfolio section.project .testimonial {
   max-width: 420px;
 }
 body.single-portfolio section.project .testimonial:nth-of-type(1) {
-  -webkit-transform: translateY(-120%);
-  transform: translateY(-120%);
+  -webkit-transform: translateY(calc(-100% + -3rem));
+  transform: translateY(calc(-100% + -3rem));
 }
 body.single-portfolio aside.sidebar {
   flex: 0 1 420px;
