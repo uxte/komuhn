@@ -489,14 +489,16 @@ body.single-portfolio section.project > header h2 {
   padding: 0;
   align-self: flex-start;
 }
-body.single-portfolio section.project .testimonial {
-  position: absolute;
-  right: 80px;
-  max-width: 420px;
-}
-body.single-portfolio section.project .testimonial:nth-of-type(1) {
-  -webkit-transform: translateY(calc(-100% + -3rem));
-  transform: translateY(calc(-100% + -3rem));
+@media screen and (min-width: 1280px) {
+  body.single-portfolio section.project .testimonial {
+    position: absolute;
+    right: 80px;
+    max-width: 420px;
+  }
+  body.single-portfolio section.project .testimonial:nth-of-type(1) {
+    -webkit-transform: translateY(calc(-100% + -3rem));
+    transform: translateY(calc(-100% + -3rem));
+  }
 }
 body.single-portfolio aside.sidebar {
   flex: 0 1 420px;
