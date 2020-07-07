@@ -447,6 +447,13 @@ a {
 .button.lighten > a:hover,
 .wp-block-button.lighten > a:hover {
   background-color: #a2a2a2;
+}
+.button.lighten:hover,
+.wp-block-button.lighten:hover {
+  background-color: #a2a2a2;
+}
+.button.lighten:hover > a,
+.wp-block-button.lighten:hover > a {
   color: #ffffff;
 }
 a.button {
