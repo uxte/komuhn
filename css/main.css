@@ -408,13 +408,15 @@ a {
   margin-bottom: 1em;
   background-color: transparent;
   opacity: 1;
-  transition: all 0.2s ease-in-out;
 }
 .button:hover,
-.wp-block-button:hover {
-  opacity: 0.7;
-  background-color: rgba(34, 34, 34, 0.1);
-  transition: all 0.2s ease-in-out;
+.wp-block-button:hover,
+.button > a:hover,
+.wp-block-button > a:hover {
+  background-color: #222222;
+  color: #ffffff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
 }
 .button > a,
 .wp-block-button > a {
@@ -431,17 +433,21 @@ a {
 }
 .button.white:hover,
 .wp-block-button.white:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  transition: all 0.5s ease-in-out;
+  background-color: #ffffff;
+  color: #222222;
 }
 .button.lighten,
 .wp-block-button.lighten {
-  border-color: #bbbbbb;
-  color: #a2a2a2;
+  border-color: #a2a2a2;
 }
 .button.lighten > a,
 .wp-block-button.lighten > a {
   color: #a2a2a2;
+}
+.button.lighten > a:hover,
+.wp-block-button.lighten > a:hover {
+  background-color: #a2a2a2;
+  color: #ffffff;
 }
 a.button {
   display: inline-block;
@@ -516,6 +522,7 @@ header.main-header nav.main-nav ul.menu li a {
 }
 header.main-header nav.main-nav ul.menu li a:hover {
   color: inherit;
+  transition: color 0.3s ease;
 }
 body.page-portfolio main section.portfolio article.project {
   background-color: lightgrey;

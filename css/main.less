@@ -141,12 +141,15 @@ a {
 	margin-bottom: 1em;
 	background-color: transparent;
 	opacity: 1;
-	transition: all .2s ease-in-out;
-	&:hover {
-		opacity: .7;
-		background-color: rgba(@color-black, .1);
-		transition: all .2s ease-in-out;
+
+	&:hover,
+	> a:hover {
+		background-color: @color-black;
+		color: @color-white;
+		transition: background-color .3s ease, color .3s ease;
+		cursor: pointer;
 	}
+
 	> a {
 		color: @color-black;
 		text-decoration: none;
@@ -159,16 +162,21 @@ a {
 		color: white;
 		border-color: white;
 		&:hover {
-			background-color: rgba(white, .2);
-			transition: all .5s ease-in-out;
+			background-color: @color-white;
+			color: @color-black;
 		}
 	}
 
+	// Make lighter color
+	// Added manualy on WP block editor
 	&.lighten {
-		border-color: lighten(@color-black, 60%);
-		color: lighten(@color-black, 50%);
+		border-color: lighten(@color-black, 50%);
 		> a {
 			color: lighten(@color-black, 50%);
+			&:hover {
+				background-color: lighten(@color-black, 50%);
+				color: @color-white;
+			}
 		}
 	}
 }
@@ -258,6 +266,7 @@ header.main-header {
 					font-weight: 600;
 					&:hover {
 						color: inherit;
+						transition: color .3s ease;
 					}
 				}
 			}
