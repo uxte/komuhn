@@ -489,16 +489,6 @@ body.single-portfolio section.project > header h2 {
   padding: 0;
   align-self: flex-start;
 }
-@media screen and (min-width: 1280px) {
-  body.single-portfolio section.project .testimonial {
-    position: absolute;
-    right: 80px;
-    max-width: 420px;
-  }
-  body.single-portfolio section.project .testimonial:nth-of-type(1) {
-    transform: translateY(calc(-100% + -3rem));
-  }
-}
 body.single-portfolio aside.sidebar {
   flex: 0 1 420px;
 }
@@ -567,5 +557,16 @@ aside.sidebar nav.nav-next-post a.next-post span.cover-text {
   font-size: 4rem;
   font-weight: 500;
   line-height: 1.3;
+}
+@media screen and (min-width: 1280px) {
+  .testimonial {
+    position: absolute;
+    left: 860px;
+    right: 80px;
+    max-width: 420px;
+  }
+  .testimonial:last-of-type {
+    transform: translateY(calc(-100% + -3rem));
+  }
 }
 /*# sourceMappingURL=full.css.map */

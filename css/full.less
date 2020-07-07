@@ -5,7 +5,10 @@
 //Variables
 @x-spacing: 	80px;
 @y-spacing: 	80px;
-@col-spacing:	 50px;
+@col-spacing:	50px;
+
+@main-width: 	860px;
+@side-width: 	420px;
 
 @font-size-title: 	4rem;
 @font-size-h1: 		3rem;
@@ -25,7 +28,8 @@ p {
 	line-height: 1.5;
 }
 
-// Text width
+// Text block width
+// Added manualy on WP block editor
 .width-50 { width: 50%; }
 .width-75 { width: 75%; }
 
@@ -241,7 +245,7 @@ body.single-portfolio {
 	main {
 		padding: 0 @x-spacing;
 
-		flex: 0 1 (860px - @x-spacing*2);
+		flex: 0 1 (@main-width - @x-spacing*2);
 
 		section {
 			> figure {
@@ -280,20 +284,10 @@ body.single-portfolio {
 				align-self: flex-start;
 			}
 		}
-		@media screen and (min-width:  1280px) {
-			.testimonial {
-				position: absolute;
-				right: 80px;
-				max-width: 420px;
-				&:nth-of-type(1) {
-					transform: translateY(calc(-100% + -3rem));
-				}
-			}
-		}
 	}
 
 	aside.sidebar {
-		flex: 0 1 420px;
+		flex: 0 1 @side-width;
 	}
 
 	footer.main-footer {
@@ -374,7 +368,7 @@ aside.sidebar {
 		a.next-post {
 			display: block;
 			padding: @x-spacing;
-			width: 860px  - @x-spacing*2;
+			width: @main-width  - @x-spacing*2;
 			min-height: 570px - @x-spacing*2;
 
 			// background: #E9E9E9;
@@ -405,5 +399,21 @@ aside.sidebar {
 }
 
 footer.main-footer {
+
+}
+
+// BIGGER THAN 1280px
+
+@media screen and (min-width: 1280px) {
+
+	.testimonial {
+		position: absolute;
+		left: @main-width;
+		right: @x-spacing;
+		max-width: @side-width;
+		&:last-of-type {
+			transform: translateY(calc(-100% + -3rem));
+		}
+	}
 
 }
