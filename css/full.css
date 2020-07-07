@@ -496,7 +496,6 @@ body.single-portfolio section.project > header h2 {
     max-width: 420px;
   }
   body.single-portfolio section.project .testimonial:nth-of-type(1) {
-    -webkit-transform: translateY(calc(-100% + -3rem));
     transform: translateY(calc(-100% + -3rem));
   }
 }
