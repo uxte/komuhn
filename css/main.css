@@ -474,7 +474,7 @@ header.main-header h1.logo a span {
 }
 header.main-header h1.logo a img {
   display: block;
-  max-height: 2rem;
+  width: 3rem;
 }
 header.main-header h2.title {
   margin: 0;

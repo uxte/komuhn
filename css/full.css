@@ -329,7 +329,7 @@ header.main-header h1.logo {
   margin-left: 80px;
 }
 header.main-header h1.logo a img {
-  max-height: 2.4rem;
+  width: 4rem;
 }
 .button,
 .wp-block-button {

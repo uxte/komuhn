@@ -24,7 +24,7 @@
             <h1 class="logo">
                 <a class="logo" href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>" alt="Logo">
                     <span><?php bloginfo('name'); ?></span>
-        			<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="<?php bloginfo('name'); ?>" />
+        			<img src="<?php echo get_template_directory_uri(); ?>/img/logo-ko-animation-grey.svg" alt="<?php bloginfo('name'); ?>" />
         		</a>
             </h1>
             <h2 class="title">
